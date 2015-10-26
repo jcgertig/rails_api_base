@@ -1,6 +1,6 @@
 class Api::V1::UserSerializer < ActiveModel::Serializer
 
-  attributes :user_id, :full_name, :first_name, :last_name, :email
+  attributes :user_id, :first_name, :last_name, :full_name, :email
 
   def user_id
     object.id

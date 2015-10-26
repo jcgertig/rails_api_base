@@ -10,7 +10,7 @@ class Api::V1::RegistrationsController < API::V1::BaseController
     @user = User.new(mapped_params)
     if @user.save
       RegistrationMailer.welcome(@user, random_password).deliver_now
-      render json: @user, serializer: Api::V1::SessionSerializer, root: nil
+      render json: @user, serializer: Api::V1::SessionSerializer, root: nil, status: 201
     else
       render json: @user.errors, status: :unprocessable_entity
     end

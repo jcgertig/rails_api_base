@@ -1,7 +1,7 @@
 class Api::V1::SessionSerializer < ActiveModel::Serializer
 
-  attributes :email, :full_name, :user_id, :auth_token, :auth_token_expiration,
-    :first_name, :last_name
+  attributes :user_id, :first_name, :last_name, :full_name, :email,
+             :auth_token, :auth_token_expiration
 
   attr_reader :token
 
